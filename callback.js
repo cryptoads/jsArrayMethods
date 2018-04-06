@@ -105,3 +105,24 @@ var acro = people.reduce(function(a,b){
 }, "");
 
 console.log(acro);
+
+function cipher(text) {
+  var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+  var result = '';
+  var word = text.split('');
+  word.forEach(function(letter) {
+    var chr = letter;
+    var idx = alphabet.indexOf(chr.toUpperCase());
+    var newIdx = idx + 13;
+    if (newIdx >= alphabet.length) {
+      newIdx -= 26;
+    }
+    result += alphabet[newIdx];
+  })
+  return result;
+}
+
+// You can assume that the text is only one word, all letters are capitalized, and the offset is always 13
+var encrypted = cipher('GENIUS');
+
+console.log(encrypted);
