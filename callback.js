@@ -106,6 +106,36 @@ var acro = people.reduce(function(a,b){
 
 console.log(acro);
 
+
+var arr1 = [
+  { name: 'Bob' },
+  { name:'Alice' },
+  { name:'Joe' }
+];
+
+var myforEach = (array, function (array) {
+   for(var i = 0; i < array.length; i++){
+    console.log(array[i].name + " something something");
+   }
+});
+
+myforEach(arr1);
+
+var myMapfun = (array, function fun(array) {
+    var newarray = [];
+    for(var i = 0; i < array.length; i++){
+        newarray.push(array[i].name + "new");
+    }
+    return newarray;
+});
+
+
+console.log(myMapfun(arr1));
+
+
+
+
+
 function cipher(text) {
   var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
   var result = '';
